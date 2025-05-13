@@ -4,9 +4,12 @@
       <div class="imgSide">
         <slot name="image"></slot>
       </div>
+
       <div class="mainContent">
         <h3><slot name="title"></slot></h3>
+
         <p><slot name="description"></slot></p>
+
         <div class="buttonItem">
           <slot name="button"></slot>
         </div>

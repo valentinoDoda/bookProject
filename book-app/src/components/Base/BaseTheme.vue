@@ -8,6 +8,7 @@
 </template>
  <style scoped>
  h1{
+    margin-top: 20px;
     text-align: center;
  }
  </style>

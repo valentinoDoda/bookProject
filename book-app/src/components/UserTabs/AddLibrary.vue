@@ -27,11 +27,15 @@
       </form>
     </form>
   </base-card>
-  <error-message v-if="checkError">
-    <template #messageTitle>{{ titleError }}</template>
-    <template #actions><base-button @click="errrBtn">OK</base-button></template>
-    <template #default>{{ msgError }}</template>
-  </error-message>
+  <teleport to="body">
+    <error-message v-if="checkError">
+      <template #messageTitle>{{ titleError }}</template>
+      <template #actions
+        ><base-button @click="errrBtn">OK</base-button></template
+      >
+      <template #default>{{ msgError }}</template>
+    </error-message>
+  </teleport>
 </template>
 
 <script>
