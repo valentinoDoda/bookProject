@@ -16,7 +16,7 @@
 </template>
 
 <style scoped>
-h3 {
+.mainContent h3 {
    display: -webkit-box;
   -webkit-line-clamp: 2; /* αριθμός γραμμών */
   -webkit-box-orient: vertical;
@@ -55,9 +55,10 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
 }
 
-p {
+.mainContent p {
   font-size: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 3; /* αριθμός γραμμών */
