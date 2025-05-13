@@ -10,7 +10,7 @@ export default {};
 
 <style scoped>
 ul {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   flex-direction: column;
 }
