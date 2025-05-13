@@ -1,5 +1,5 @@
 <template>
-  <base-card>
+  <base-card style="margin-top: 30px">
     <form @submit="handle" action="">
       <form id="itemForm">
         <label for="image">Insert Image:</label>
@@ -65,17 +65,22 @@ export default {
       image.then((isValid) => {
         if (isValid) {
           let isBookExist = false;
-          for (let i = 0; i < this.bookDisplay.length; i++) {
-            if (this.bookDisplay[i].title == titleBook) {
-              console.log(this.bookDisplay[i].title, titleBook);
-              isBookExist = true;
-              this.msgError = "This book exist";
-              this.checkError = true;
+          if (titleBook) {
+            for (let i = 0; i < this.bookDisplay.length; i++) {
+              if (this.bookDisplay[i].title == titleBook) {
+                console.log(this.bookDisplay[i].title, titleBook);
+                isBookExist = true;
+                this.msgError = "This book exist";
+                this.checkError = true;
 
-              break;
+                break;
+              }
             }
+          } else {
+            this.msgError = "Book Title is reqirued";
+            this.checkError = true;
           }
-          if (!isBookExist) {
+          if (!isBookExist && titleBook) {
             const book = {
               status: "read",
               id: new Date().toISOString(),
@@ -83,6 +88,8 @@ export default {
               description: descriptionBook,
               img: imgSrc,
             };
+            this.$refs.title.value = "";
+            this.$refs.description.value = "";
             this.addBook(book);
           }
         } else {

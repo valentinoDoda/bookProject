@@ -17,7 +17,7 @@
 
 <style scoped>
 .mainContent h3 {
-   display: -webkit-box;
+  display: -webkit-box;
   -webkit-line-clamp: 2; /* αριθμός γραμμών */
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -31,11 +31,11 @@
   width: 100%;
 }
 .imgSide {
-  max-height: 200px;
+  min-height: 200px;
   min-width: 300px;
 }
-.imgSide ::v-deep img{
-  max-height: 100%;
+.imgSide ::v-deep img {
+  min-height: 100%;
   min-width: 100%;
   border: 1px solid black;
 }
@@ -47,7 +47,7 @@
 }
 .buttonItem ::v-deep button {
   width: 100%;
-  
+
   font-size: 1.1rem;
   align-self: flex-end;
 }
@@ -80,7 +80,7 @@
   .buttonItem ::v-deep button {
     margin-top: 20px;
   }
-  .imgSide ::v-deep img{
+  .imgSide ::v-deep img {
     width: 100%;
   }
 }
